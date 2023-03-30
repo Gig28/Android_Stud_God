@@ -13,13 +13,20 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        setTitle("Your Order");
+
         Intent orderIntent = getIntent();
         String userName = orderIntent.getStringExtra("userNameInent");
         String goodsName = orderIntent.getStringExtra("GoodsName");
         int quantity = orderIntent.getIntExtra("Quantity", 0);
+        double Price = orderIntent.getDoubleExtra("Price",0);
         double orderPrice = orderIntent.getDoubleExtra("OrderPrice",0);
         TextView orderTextView = findViewById(R.id.textView2);
-        orderTextView.setText(userName + "\n" +  goodsName + "\n" + quantity + "\n" + orderPrice);
+        orderTextView.setText("Имя клиента: "+ userName + "\n" +
+               "Товар: " +  goodsName + "\n" +
+               "Кол-во: " + quantity + " шт" +"\n" +
+                "Цена за шт: " + Price + "\n" +
+                "Итоговая стоимость: " + orderPrice );
 
 
 

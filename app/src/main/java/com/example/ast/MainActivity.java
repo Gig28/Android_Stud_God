@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         order.quantity = quantity;
         Log.d(  "printQuantity", "" + order.quantity);
+        order.Price = price;
+        Log.d(  "printPrice", "" + order.Price);
         order.orderPrice = quantity * price;
         Log.d(  "printOrderPrice", "" + order.orderPrice);
 
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         orderINTENT.putExtra("userNameInent", order.userName);
         orderINTENT.putExtra("GoodsName", order.goodsName);
         orderINTENT.putExtra("Quantity", order.quantity);
+        orderINTENT.putExtra("Price", order.Price);
         orderINTENT.putExtra("OrderPrice", order.orderPrice);
 
         startActivity(orderINTENT);
